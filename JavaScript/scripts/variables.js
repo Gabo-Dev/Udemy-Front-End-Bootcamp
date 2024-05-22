@@ -10,3 +10,8 @@ Rules for identifiers:
  * Reserved words cannot be used as names.
 */
 document.getElementById("demo").innerHTML = z;
+/*
+    Order Precedence: 
+    Brackets, Exponents, Division, Mulitiplication, Addition, Substraction.
+*/
+document.getElementById("demo2").innerHTML = (5 +5)*2;
