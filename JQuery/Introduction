@@ -7,3 +7,21 @@
     * Effects and Animations.
     * AJAX. 
 - Many well known companies use jQuery in web application dev't: Google, Microsoft, IBM.
+- We need to embed jQ in ur code, speci into the head. For example, using the src google api
+- Basic Syntax:  $(selector).action()
+    $ sign to define/access jQuery.
+    (Selector) to find HTML Elements.
+    action() to be performed on element(s).
+    Example: 
+    $(document).ready(function(){
+        // Insert jQuery methods here
+    });
+- jQuert Selectors:
+    "*" all elements.
+    "this" currente element.
+    "p.demo" all <p> elements with class="demo".
+    "ul li:first" selects the first <li> element of the first <ul>.
+    "ul li:first-child" selects the first <li> element of every <ul>.
+    "[href]" selects all elements with an href attribute.
+    
+
