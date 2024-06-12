@@ -1,0 +1,4 @@
+- Is a JS library for building ui.
+- Works only on view layer only,  manipulation of DOM using "virtual" DOM.
+- Powerful community libraries.
+- We gonna use JSX to work with HTML and JS code, JSX also  prevents injection atacks.
