@@ -4,12 +4,12 @@ import React from 'react'
 
 const GameCircle = ({id, children}) => {
     console.log(id);
-    const onCLick = () => {
-        alert('hi');
+    const onCLick = (id) => {
+        alert('hi'+ id);
     }
 
     return (
-        <div onClick={onCLick}>
+        <div onClick={() => onCLick(id)}>
             {children}
         </div>
     )
