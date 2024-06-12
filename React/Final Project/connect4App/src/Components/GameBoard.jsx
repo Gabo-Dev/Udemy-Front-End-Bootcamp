@@ -4,30 +4,23 @@ import '../css/styles.css'
 
  const GameBoard = () => {
     return (
-        <div>
-            <GameCircle id={1}>
-                <span className="redDiv">Red</span>
-            </GameCircle>
-            <GameCircle id={2}>
-            <span className="blueDiv">Blue</span>
-            </GameCircle>
-            <GameCircle id={3}>
-            <span className="redDiv">Red</span>
-            </GameCircle>
-            <GameCircle id={4}>
-            <span className="blueDiv">Blue</span>
-            </GameCircle>
-            <GameCircle id={5}>
-            <span className="redDiv">Red</span>
-            </GameCircle>
-            <GameCircle id={6}>
-            <span className="blueDiv">Blue</span>            </GameCircle>
-            <GameCircle id={7}>
-            <span className="redDiv">Red</span>
-            </GameCircle>
-            <GameCircle id={8}>
-            <span className="blueDiv">Blue</span>
-            </GameCircle>
+        <div className="grid-Container">
+            <GameCircle id={1} color="red"/>
+            <GameCircle id={2} color="blue"/>
+            <GameCircle id={3} color="red"/>
+            <GameCircle id={4} color="blue"/>
+            <GameCircle id={5} color="red" />
+            <GameCircle id={6} color="blue"/>
+            <GameCircle id={7} color="red" />
+            <GameCircle id={8} color="blue"/>
+            <GameCircle id={9} color="red"/>
+            <GameCircle id={10} color="blue"/>
+            <GameCircle id={11} color="red"/>
+            <GameCircle id={12} color="blue"/>
+            <GameCircle id={13} color="red" />
+            <GameCircle id={14} color="blue"/>
+            <GameCircle id={15} color="red" />
+            <GameCircle id={16} color="blue"/>
         </div>
     )
 }

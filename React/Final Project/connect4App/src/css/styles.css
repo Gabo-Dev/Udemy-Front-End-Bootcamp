@@ -1,6 +1,30 @@
 .blueDiv{
     color: blue;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    position: ;
 }
 .redDiv{
     color: red;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    
+}
+.grid-Container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: aqua;
+    padding: 20px;
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    top: 15%;
 }

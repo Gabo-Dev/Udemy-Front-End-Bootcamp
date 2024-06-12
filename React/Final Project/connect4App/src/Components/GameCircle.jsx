@@ -1,18 +1,17 @@
 // rafce, which is react arrow function export component
 import React from 'react'
+import '../css/styles.css'
 
 
-const GameCircle = ({id, children}) => {
-    console.log(id);
-    const onCLick = (id) => {
-        alert('hi'+ id);
-    }
-
+const GameCircle = ({id, color}) => {
+    const circleStyle = color === 'red' ? 'redDiv' : 'blueDiv';
+    console.log(circleStyle)
+    
     return (
-        <div onClick={() => onCLick(id)}>
-            {children}
+        <div className={circleStyle}>
         </div>
     )
+    
 }
 
 export default GameCircle;
