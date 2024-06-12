@@ -1,32 +1,32 @@
 import React from "react";
 import GameCircle from "./GameCircle";
+import '../css/styles.css'
 
  const GameBoard = () => {
     return (
         <div>
             <GameCircle id={1}>
-                Red
+                <span className="redDiv">Red</span>
             </GameCircle>
             <GameCircle id={2}>
-                Blue
+            <span className="blueDiv">Blue</span>
             </GameCircle>
             <GameCircle id={3}>
-                Red
+            <span className="redDiv">Red</span>
             </GameCircle>
             <GameCircle id={4}>
-                Blue
+            <span className="blueDiv">Blue</span>
             </GameCircle>
             <GameCircle id={5}>
-                Red
+            <span className="redDiv">Red</span>
             </GameCircle>
             <GameCircle id={6}>
-                Blue
-            </GameCircle>
+            <span className="blueDiv">Blue</span>            </GameCircle>
             <GameCircle id={7}>
-                Red
+            <span className="redDiv">Red</span>
             </GameCircle>
             <GameCircle id={8}>
-                Blue
+            <span className="blueDiv">Blue</span>
             </GameCircle>
         </div>
     )
