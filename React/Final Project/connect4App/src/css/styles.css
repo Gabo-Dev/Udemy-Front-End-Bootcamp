@@ -1,22 +1,17 @@
-.blueDiv{
-    color: blue;
-    background-color: blue;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    border-radius: 50%;
-    position: ;
+.even{
+ background-color: blue;
 }
-.redDiv{
-    color: red;
+.odd{
     background-color: red;
+}
+.gameCircle{
     width: 100px;
     height: 100px;
     margin: 10px;
     border-radius: 50%;
     
 }
-.grid-Container{
+.gameBoard{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;

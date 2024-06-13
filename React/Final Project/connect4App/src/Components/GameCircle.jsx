@@ -3,12 +3,12 @@ import React from 'react'
 import '../css/styles.css'
 
 
-const GameCircle = ({id, color}) => {
-    const circleStyle = color === 'red' ? 'redDiv' : 'blueDiv';
-    console.log(circleStyle)
+const GameCircle = ({id, onCircleClicked}) => {
+    const circleStyle = id % 2 === 0 ? 'odd' : 'even';
+
     
     return (
-        <div className={circleStyle}>
+        <div className={`gameCircle ${circleStyle}`}  onClick={() => onCircleClicked(id)}>
         </div>
     )
     
