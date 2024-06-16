@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import GameCircle from "./GameCircle";
 import '../css/styles.css'
 import Header from "./Header";
@@ -13,7 +13,19 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
     const [currentPlayer, setcurrentPlayer] = useState(PLAYER_1);
     const [gameState, setGameState] = useState(GAME_STATE_PLAYING);
     const [winPlayer, setWinPlayer] = useState(NO_PLAYER);
-    //init the game
+
+    // function to make sure game only run when the components first mount
+    useEffect(() => {
+      initGame();
+
+    }, [])
+    
+    // initialize our state and the game
+    const initGame =()=>{
+        setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
+        setcurrentPlayer(PLAYER_1);
+    }
+    //init the Board
     const initBoard = () =>{
         const circles =[];
         for (let index = 0; index < NO_CIRCLES; index++) {
@@ -61,7 +73,7 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
         <div className="gameBoard">
             {initBoard()}
         </div>
-        <Footer />
+        <Footer onClickEvent ={initGame}/>
        </>
     )
 }
