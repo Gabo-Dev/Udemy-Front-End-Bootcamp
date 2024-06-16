@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import GameBoard from './Components/GameBoard'
-
+import { App } from './Components/APP'
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <GameBoard />
+    <App />
 )

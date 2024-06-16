@@ -1,7 +1,14 @@
-.even{
+body{
+    background-color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.player_0{
+    background-color: white;
+}
+.player_1{
  background-color: blue;
 }
-.odd{
+.player_2{
     background-color: red;
 }
 .gameCircle{
@@ -9,17 +16,78 @@
     height: 100px;
     margin: 10px;
     border-radius: 50%;
+    border: 5px solid black;
     
 }
 .gameBoard{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    background-color: aqua;
+    background-color: bisque;
     padding: 20px;
     position: absolute;
     width: 500px;
     left: 50%;
     margin-left: -250px;
-    top: 15%;
+    margin-top: 9%;
+    border: 8px solid burlywood;
+    border-radius: 8%;
+    -webkit-box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+    box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9); 
+}
+.panel{
+    position: absolute;
+    background-color: lightgoldenrodyellow;
+    border: 8px solid burlywood;
+    -webkit-box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+    box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9); 
+    z-index: 1;
+}
+.header{
+    left: 50%;
+    height: 80px;
+    width: 300px;
+    margin-left: -120px;
+}
+.header-text{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    width: 200px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.footer{
+    left: 50%;
+    bottom: 5px;
+    height: 80px;
+    width: 300px;
+    margin-left: -120px;
+}
+.footer button{
+    position: relative;
+    left: 50%;
+    top: 20%;
+    margin-left: -125px;
+    width: 250px;
+    height: 50px;
+    background-color: lightblue;
+    font-size: 30px;
+    -webkit-box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9);
+    box-shadow: 3px 5px 10px 2px rgba(0,0,0,0.9); 
+    border: 5px solid chocolate;
+    font-weight: bold;
+}
+.app-container{
+    width: 800px;
+    height: 725px;
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    bottom: 10%;
+    margin-left: -400px;
 }
