@@ -3,7 +3,7 @@ import GameCircle from "./GameCircle";
 import '../css/styles.css'
 import Header from "./Header";
 import Footer from "./Footer";
-import { isDraw, isWinner } from "../helper";
+import { isDraw, isWinner, getComputerMove } from "../helper";
 import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STATE_WIN,NO_CIRCLES } from "../Constants";
 
 
@@ -24,6 +24,7 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
     const initGame =()=>{
         setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
         setcurrentPlayer(PLAYER_1);
+        setGameState(GAME_STATE_PLAYING);
     }
     //init the Board
     const initBoard = () =>{
@@ -32,6 +33,10 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
             circles.push(renderCircle(index));
         }
         return circles;
+    }
+    // enable suggest a move for cpu player
+    const suggestMove = () =>{
+        circleClicked(getComputerMove(gameBoard));
     }
 
     // callBack
@@ -73,7 +78,7 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
         <div className="gameBoard">
             {initBoard()}
         </div>
-        <Footer onClickEvent ={initGame}/>
+        <Footer onNewGameClick ={initGame} onSuggestClick={suggestMove}/>
        </>
     )
 }

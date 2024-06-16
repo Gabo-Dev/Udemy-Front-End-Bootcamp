@@ -36,3 +36,14 @@ export const isDraw = (gameBoard, currentMove, currentPlayer) =>{
     let count = board.reduce((n,x) => n + (x===0),0);
     return count ===0;
 }
+//  do a simple random move withou ia move, we will move circle that currently are zero in the array
+export const getComputerMove = (gameBoard) =>{
+    let validMoves = [];
+    for (let i = 0; i < gameBoard.length; i++) {
+        if (gameBoard[i] === 0) {
+            validMoves.push(i);
+        }
+    }
+    let rndMove = Math.floor(Math.random() * validMoves.length);
+    return validMoves[rndMove];
+}

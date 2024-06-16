@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Footer({onClickEvent}) {
+function Footer({onNewGameClick, onSuggestClick}) {
   return (
     <div className='panel footer'>
-        <button onClick={onClickEvent}>New Game</button>
+        <button onClick={onNewGameClick}>New Game</button>
+        <button onClick={onSuggestClick}>Suggest</button>
     </div>
   )
 }
