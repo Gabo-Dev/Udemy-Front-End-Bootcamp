@@ -78,7 +78,7 @@ import { GAME_STATE_PLAYING,NO_PLAYER,PLAYER_1,PLAYER_2,GAME_STATE_DRAW,GAME_STA
         <div className="gameBoard">
             {initBoard()}
         </div>
-        <Footer onNewGameClick ={initGame} onSuggestClick={suggestMove}/>
+        <Footer onNewGameClick ={initGame} onSuggestClick={suggestMove} gameState={gameState}/>
        </>
     )
 }

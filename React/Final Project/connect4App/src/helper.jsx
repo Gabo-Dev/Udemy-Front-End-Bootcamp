@@ -22,22 +22,22 @@ export const isWinner = (gameBoard, currentMove, currentPlayer) => {
             board[c1] === board[c2] &&
             board[c2] === board[c3] &&
             board[c3] === board[c4]) {
-                return true;
+            return true;
         }
     }
     return false;
 }
 // detect draw game
-export const isDraw = (gameBoard, currentMove, currentPlayer) =>{
+export const isDraw = (gameBoard, currentMove, currentPlayer) => {
     let board = [...gameBoard];
     board[currentMove] = currentPlayer;
 
     // check 0s into the array to determine the draw
-    let count = board.reduce((n,x) => n + (x===0),0);
-    return count ===0;
+    let count = board.reduce((n, x) => n + (x === 0), 0);
+    return count === 0;
 }
 //  do a simple random move withou ia move, we will move circle that currently are zero in the array
-export const getComputerMove = (gameBoard) =>{
+const getRandomComputerMove = (gameBoard) => {
     let validMoves = [];
     for (let i = 0; i < gameBoard.length; i++) {
         if (gameBoard[i] === 0) {
@@ -46,4 +46,72 @@ export const getComputerMove = (gameBoard) =>{
     }
     let rndMove = Math.floor(Math.random() * validMoves.length);
     return validMoves[rndMove];
+}
+// aim move is dont let the player 1 win
+export const getComputerMove = (gameBoard) => {
+    let moveChecks = [
+        // vertical
+        {
+            indexes: [0, 4, 8, 12],
+            max: 4,
+            step: 1
+        },
+        // horizontal
+        {
+            indexes: [0, 1, 2, 3],
+            max: 16,
+            step: 4
+        },
+        // diagonal
+        {
+            indexes: [0, 5, 10, 15],
+            max: 16,
+            step: 16,
+        },
+        //diagonal
+        {
+            indexes: [3, 6, 9, 12],
+            max: 16,
+            step: 16,
+        }
+    ];
+    let position = getPosition(gameBoard,moveChecks);
+    if (position> -1) {
+        return position;
+    }
+    else{
+        return getRandomComputerMove(gameBoard);
+    }
+}
+const getPosition = (gameBoard, moveChecks) => {
+    for (let check = 0; check < moveChecks.length; check++) {
+        for (let i = 0; i < moveChecks[check].max; i += moveChecks[check].step) {
+            let series = gameBoard[i + moveChecks[check].indexes[0]].toString() +
+                gameBoard[i + moveChecks[check].indexes[1]].toString() +
+                gameBoard[i + moveChecks[check].indexes[2]].toString() +
+                gameBoard[i + moveChecks[check].indexes[3]].toString();
+
+            switch (series) {
+                case "1110":
+                case "2220":
+                    return i + moveChecks[check].indexes[3];
+                    break;
+                case "1101":
+                case "2202":
+                    return i + moveChecks[check].indexes[2];
+                    break;
+                case "1011":
+                case "2022":
+                    return i + moveChecks[check].indexes[1];
+                    break;
+                case "0111":
+                case "0222":
+                    return i + moveChecks[check].indexes[0];
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    return -1;
 }
