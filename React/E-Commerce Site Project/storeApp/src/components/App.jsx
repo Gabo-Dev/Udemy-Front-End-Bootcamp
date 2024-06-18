@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import '../src/css/styles.css'
+import '../css/styles.css'
+import Category from "./Category";
+
 
 export function App() {
     // to manipulate our JSON data when it come back from our JSON server
@@ -17,6 +19,11 @@ export function App() {
 
     }, [])
 
+    const renderCategories = () =>{
+        return results.map(c =>
+            <Category key={c.id} id={c.id} title={c.title} />
+        )
+    }
 
     return (
         <>
@@ -25,13 +32,7 @@ export function App() {
             </header>
             <section>
                 <nav>
-                    <div className="App">
-                        {
-                            results.map(d => (
-                                <div key={d.id}>{d.title}</div>
-                            ))
-                        }
-                    </div>
+                   {results && renderCategories()}
                 </nav>
                 <article>
                     main area
