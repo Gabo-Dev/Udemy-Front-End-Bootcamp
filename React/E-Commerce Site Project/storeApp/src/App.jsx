@@ -1,5 +1,6 @@
-
 import React, { useState } from "react";
+import '../src/css/styles.css'
+
 export function App() {
     // to manipulate our JSON data when it come back from our JSON server
     const [results, setResults] = useState([]);
@@ -18,12 +19,27 @@ export function App() {
 
 
     return (
-        <div className="App">
-            {
-                results.map(d => (
-                    <div key={d.id}>{d.title}</div>
-                ))
-            }
-        </div>
+        <>
+            <header>
+                Gabo Store
+            </header>
+            <section>
+                <nav>
+                    <div className="App">
+                        {
+                            results.map(d => (
+                                <div key={d.id}>{d.title}</div>
+                            ))
+                        }
+                    </div>
+                </nav>
+                <article>
+                    main area
+                </article>
+            </section>
+            <footer>
+            <p>&copy; 2024 Gabo S.L.</p>
+            </footer>
+        </>
     )
 }
