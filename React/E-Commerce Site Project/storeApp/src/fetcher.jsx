@@ -5,7 +5,7 @@ export const Fetcher = async (url) => {
         // async call, we update the results using the data 
         const response = await fetch(BASE_URL + url);
         if (!response.ok) {
-            throw new Error(`HTTP Error ${respomse.status}`);
+            throw new Error(`HTTP Error ${response.status}`);
         }
         const responseData = await response.json();
         responseObject.errorMessage = '';

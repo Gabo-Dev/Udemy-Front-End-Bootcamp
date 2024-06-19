@@ -17,12 +17,68 @@
         {
             "id": 1,
             "catId": 1,
-            "title": "Beko White Fridge Freezer"
+            "title": "Beko Integrated Tall Freezer",
+            "productCode": "BFF1",
+            "image": "refrigerator-silver.png",
+            "price": "350",
+            "sku": "57",
+            "description": "The Beko  BFF1 Integrated Tall Freezer has a 220 litre capacity",
+            "specs": {"dimensions":"177.5 x 54 x 54 (H x W x D)", "capacity":"220 litres"},
+            "features": ["Economic", "Suitable"],
+            "Stock": 20
         },
         {
             "id": 2,
             "catId": 1,
-            "title": "WhirlPool White Fridge Freezer"
+            "title": "WhirlPool White Fridge Freezer",
+            "productCode": "BFF2",
+            "image": "refriG.png",
+            "price": "4500",
+            "sku": "28",
+            "description": "Keep your fresh food tasting great  in the WhirlPool White Fridge Freezer   ",
+            "specs": {"dimensions":"287.5 x 59 x 59 (H x W x D)", "capacity":"350 litres"},
+            "features": ["Economic", "Suitable"],
+            "Stock": 0
+        },
+        {
+            "id": 3,
+            "catId": 3,
+            "title": "Beko Monitor Full HD",
+            "productCode": "BFF3",
+            "image": "monitor1.png",
+            "price": "250",
+            "sku": "13",
+            "description": " Enjoy your games or watch your favorites movies with the new  Beko Monitor Full HD ",
+            "specs": {"dimensions":"2560x1440px (H x W )", "frecuency":"170Hz"},
+            "features": ["Economic", "Suitable"],
+            "Stock": 3
+        },
+        {
+            "id": 4,
+            "catId": 3,
+            "title": "Beko Monitor 4K",
+            "productCode": "BFF4",
+            "image": "monitor2.png",
+            "price": "560",
+            "sku": "12",
+            "description": " Enjoy your games or watch your favorites movies with the new  Beko Monitor 4K  ",
+            "specs": {"dimensions":"2560x1440px (H x W )", "frecuency":"170Hz"},
+            "features": ["Economic", "Suitable"],
+            "Stock": 3
+        },
+        {
+            "id": 5,
+            "catId": 3,
+            "title": "Beko Monitor Full HD Curve",
+            "productCode": "BFF5",
+            "image": "monitor3.png",
+            "price": "850",
+            "sku": "16",
+            "description": " Enjoy your games or watch your favorites movies with the new  Beko Monitor Full HD Curve ",
+            "specs": {"dimensions":"2560x1440px (H x W )", "frecuency":"350Hz"},
+            "features": ["Economic", "Suitable"],
+            "Stock": 15
         }
+       
     ]
 }

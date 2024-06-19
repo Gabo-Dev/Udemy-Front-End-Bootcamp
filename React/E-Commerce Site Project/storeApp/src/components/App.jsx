@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import '../css/styles.css'
 import Category from "./Category";
-import { getCategories,getProducts } from "../fetcher";
+import { getCategories, getProducts } from "../fetcher";
+import Category_product from "./category_product";
 
 export function App() {
     // to manipulate our JSON data when it come back from our JSON server
@@ -36,7 +37,7 @@ export function App() {
 
     const renderProducts = () => {
         return products.data.map(p =>
-            <div>{p.title}</div>
+            <Category_product {...p}>{p.title}</Category_product>
         )
     }
 
@@ -50,11 +51,12 @@ export function App() {
                     {categories.errorMessage && <div>Error: {categories.errorMessage}</div>}
                     {categories.data && renderCategories()}
                 </nav>
-                <article>
-                    {products.errorMessage && <div>Error: {products.errorMessage}</div>}
+                <main>
                     <h1>Products</h1>
-                    {products && renderProducts()}
-                </article>
+                    {products.errorMessage && <div>Error: {products.errorMessage}</div>}
+                    
+                    {products.data && renderProducts()}
+                </main>
             </section>
             <footer>
                 <p>&copy; 2024 Gabo S.L.</p>
