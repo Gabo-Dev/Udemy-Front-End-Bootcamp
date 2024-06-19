@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../css/styles.css'
 import Category from "./Category";
-
+import { Fetcher } from "../fetcher";
 
 export function App() {
     // to manipulate our JSON data when it come back from our JSON server
@@ -10,14 +10,12 @@ export function App() {
 
     // fetch API
     React.useEffect(() => {
-        // async call, we update the results using the data 
-        fetch("http://localhost:5000/categories")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setCategories(data)
-            })
-
+        // to get properly ur data back
+        const fetchData  = async() =>{
+            const data = await Fetcher("/categories");
+            setCategories(data);
+        }
+        fetchData();
     }, [])
 
     const handleCategoryClick = (id) => {
